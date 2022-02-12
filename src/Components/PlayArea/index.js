@@ -13,9 +13,10 @@ class PlayArea extends React.Component {
         guess5: "",
         guess6: "",
         guesses: [],
-        answer: "beers",
+        answer: "yopko",
         lettersUsed: [],
         winArr: [2, 2, 2, 2, 2],
+        scoreTotal: 0,
     };
 
     onChange = e => {
@@ -25,10 +26,6 @@ class PlayArea extends React.Component {
     handleGuessSubmit = event => {
         event.preventDefault();
         // Win Condition
-        if (this.state.entry === this.state.answer) {
-            alert("you win");
-        }
-        else {
             if (!this.state.guesses.includes(this.state.entry)) {
                 //   Guess 1
                 if (this.state.count === 1) {
@@ -86,7 +83,7 @@ class PlayArea extends React.Component {
                 alert("Duplicate Entry Please Try Again");
             }
 
-        }
+        
     };
     // Fill Letter Graveyard
     fillGraveYard() {
@@ -105,22 +102,40 @@ class PlayArea extends React.Component {
 
     }
 
+     // Addition function to get score for  win calculation
+     getScoreTotal(accumulator, a) {
+        this.state.scoreTotal =  accumulator + a;
+    }
+
     gameLogic() {
         let scoreArr = [];
         let entryArr = this.state.entry.split("");
         let answerArr = this.state.answer.split("");
 
-        for(let letter of entryArr){
-            if(answerArr.includes(letter)){
-                console.log(letter, "is included");
+        for(let i = 0; i < 5; i++){
+            let letter = entryArr[i];
+            if(answerArr[i] === letter){
+                scoreArr.push(2);
+            }
+            else if(answerArr.includes(letter)){
                 scoreArr.push(1);
             }
             else{
-                console.log(letter, "NOT INCLUDED");
                 scoreArr.push(0);
             }
         }
-        console.log("score arr", scoreArr);
+        console.log("score arr", scoreArr, "score total:", scoreArr.reduce((a, b) => a + b, 0));
+
+        // Win condition check if the score = 10
+        if(scoreArr.reduce((a, b) => a + b, 0) === 10){
+        
+            // Alert Player of Win
+
+            alert("You did it! Congrats!");
+
+        // Reload page
+        window.location.reload();
+        }
     }
 
     render() {

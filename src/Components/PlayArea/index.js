@@ -17,25 +17,26 @@ class PlayArea extends React.Component {
         lettersUsed: [],
         winArr: [2, 2, 2, 2, 2],
         scoreTotal: 0,
+        scoreLog: [0, 0, 0, 0, 0],
     };
 
     onChange = e => {
         this.setState({ entry: e.target.value });
     };
 
-    componentDidMount(){
+    componentDidMount() {
         this.chooseWord();
     }
 
     // Randomly Choose the word that will be used
-    chooseWord(){
+    chooseWord() {
         let words = ["Abuse", "Adult", "Agent", "Anger", "Apple", "Award", "Basis", "Beach", "Birth", "Block", "Blood", "Board", "Brain", "Bread", "Break", "Brown", "Buyer", "Cause", "Chain", "Chair", "Chest", "Chief", "Child", "China", "Claim", "Class", "Clock", "Coach", "Coast", "Court", "Cover", "Cream", "Crime", "Cross", "Crowd", "Crown", "Cycle", "Dance", "Death", "Depth", "Doubt", "Draft", "Drama", "Dream", "Dress", "Drink", "Drive", "Earth", "Enemy", "Entry", "Error", "Event", "Faith", "Fault", "Field", "Fight", "Final", "Floor", "Focus", "Force", "Frame", "Frank", "Front", "Fruit", "Glass", "Grant", "Grass", "Green", "Group", "Guide", "Heart", "Henry", "Horse", "Hotel", "House", "Image", "Index", "Input", "Issue", "Japan", "Jones", "Judge", "Knife", "Laura", "Layer", "Level", "Lewis", "Light", "Limit", "Lunch", "Major", "March", "Match", "Metal", "Model", "Money", "Month", "Motor", "Mouth", "Music", "Night", "Noise", "North", "Novel", "Nurse", "Offer", "Order", "Other", "Owner", "Panel", "Paper", "Party", "Peace", "Peter", "Phase", "Phone", "Piece", "Pilot", "Pitch", "Place", "Plane", "Plant", "Plate", "Point", "Pound", "Power", "Press", "Price", "Pride", "Prize", "Proof", "Queen", "Radio", "Range", "Ratio", "Reply", "Right", "River", "Round", "Route", "Rugby", "Scale", "Scene", "Scope", "Score", "Sense", "Shape", "Share", "Sheep", "Sheet", "Shift", "Shirt", "Shock", "Sight", "Simon", "Skill", "Sleep", "Smile", "Smith", "Smoke", "Sound", "South", "Space", "Speed", "Spite", "Sport", "Squad", "Staff", "Stage", "Start", "State", "Steam", "Steel", "Stock", "Stone", "Store", "Study", "Stuff", "Style", "Sugar", "Table", "Taste", "Terry", "Theme", "Thing", "Title", "Total", "Touch", "Tower", "Track", "Trade", "Train", "Trend", "Trial", "Trust", "Truth", "Uncle", "Union", "Unity", "Value", "Video", "Visit", "Voice", "Waste", "Watch", "Water", "While", "White", "Whole", "Woman", "World", "Youth"];
 
         // Add the word to the state
 
-        this.state.answer = words[Math.floor(Math.random()*words.length)].toLowerCase();
+        this.state.answer = words[Math.floor(Math.random() * words.length)].toLowerCase();
 
-        console.log("this is the word used",this.state.answer);
+        console.log("this is the word used", this.state.answer);
     }
 
 
@@ -118,11 +119,6 @@ class PlayArea extends React.Component {
 
     }
 
-    // Addition function to get score for  win calculation
-    getScoreTotal(accumulator, a) {
-        this.state.scoreTotal = accumulator + a;
-    }
-
     gameLogic() {
         let scoreArr = [];
         let entryArr = this.state.entry.split("");
@@ -141,6 +137,8 @@ class PlayArea extends React.Component {
             }
         }
         console.log("score arr", scoreArr, "score total:", scoreArr.reduce((a, b) => a + b, 0));
+
+        this.state.scoreLog = scoreArr;
 
         // Win condition check if the score = 10
         if (scoreArr.reduce((a, b) => a + b, 0) === 10) {
@@ -161,9 +159,10 @@ class PlayArea extends React.Component {
             <div>
                 <Container>
                     <Row>
-                    <Col>
-                    </Col>
-                    <Col>
+                        <Col>
+                        </Col>
+                        <Col>
+                            <div>{this.state.scoreLog.map(o => `${o}`)}</div>
                             <h4>{this.state.guess1}</h4>
                             <h4>{this.state.guess2}</h4>
                             <h4>{this.state.guess3}</h4>
@@ -171,17 +170,17 @@ class PlayArea extends React.Component {
                             <h4>{this.state.guess5}</h4>
                             <h4>{this.state.guess6}</h4>
                             <h3>{this.state.entry}</h3>
-                        <form onSubmit={this.handleGuessSubmit}>
-                            <label>
-                                <input
-                                    maxLength="5"
-                                    placeholder=""
-                                    value={this.state.entry}
-                                    onChange={this.onChange}
-                                />
-                            </label>
+                            <form onSubmit={this.handleGuessSubmit}>
+                                <label>
+                                    <input
+                                        maxLength="5"
+                                        placeholder=""
+                                        value={this.state.entry}
+                                        onChange={this.onChange}
+                                    />
+                                </label>
                                 <input type="submit" value="Submit" />
-                        </form>
+                            </form>
                         </Col>
                         <Col>
                         </Col>

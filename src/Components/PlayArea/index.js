@@ -14,6 +14,7 @@ class PlayArea extends React.Component {
       guess6: "",
       guesses: [],
       answer: "beers",
+      lettersUsed: [],
     };
   
     onChange = e => {
@@ -67,19 +68,60 @@ class PlayArea extends React.Component {
               }
     
               console.log(this.state.guesses);
+            //   // Fill Letter Graveyard
+
+            //   let entryArr = this.state.entry.split("");
+
+            //   // CHeck if letter has been used then add it to array if not
+
+            //   for(let letter of entryArr){
+            //       if(!this.state.lettersUsed.includes(letter)){
+            //           this.state.lettersUsed.push(letter);
+            //       }
+            //   }
+
+              // Combine all letters used to display
+
+              console.log(this.state.lettersUsed);
               this.state.count++;
+              this.fillGraveYard();
             //   event.target.reset();
     
           }
           else{
               alert("Duplicate Entry Please Try Again");
           }
-      }
+
+        }
     };
+    fillGraveYard(){
+        // Fill Letter Graveyard
+
+        let entryArr = this.state.entry.split("");
+
+        // CHeck if letter has been used then add it to array if not
+
+        for(let letter of entryArr){
+            if(!this.state.lettersUsed.includes(letter)){
+                this.state.lettersUsed.push(letter);
+            }
+        }
+
+    }
   
     render() {
       return (
-        <form onSubmit={this.handleGuessSubmit}>
+          <div>
+        <Container>
+            <Row>
+                <Col>
+                <div className='letter-graveyard'>
+                <h3>Graveyard</h3>
+                <h3>{this.state.lettersUsed.join(",")}</h3>
+                </div>
+                </Col>
+                <Col>
+                <form onSubmit={this.handleGuessSubmit}>
               <h4>{this.state.guess1}</h4>
               <h4>{this.state.guess2}</h4>
               <h4>{this.state.guess3}</h4>
@@ -97,6 +139,12 @@ class PlayArea extends React.Component {
           </label>
           <input type="submit" value="Submit" />
         </form>
+                </Col>
+                <Col>
+                </Col>
+            </Row>
+        </Container>
+        </div>
       );
     }
   }

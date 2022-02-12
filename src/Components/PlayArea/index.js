@@ -113,11 +113,14 @@ class PlayArea extends React.Component {
         for(let letter of entryArr){
             if(answerArr.includes(letter)){
                 console.log(letter, "is included");
+                scoreArr.push(1);
             }
             else{
                 console.log(letter, "NOT INCLUDED");
+                scoreArr.push(0);
             }
         }
+        console.log("score arr", scoreArr);
     }
 
     render() {

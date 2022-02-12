@@ -13,7 +13,7 @@ class PlayArea extends React.Component {
         guess5: "",
         guess6: "",
         guesses: [],
-        answer: "yopko",
+        answer: "",
         lettersUsed: [],
         winArr: [2, 2, 2, 2, 2],
         scoreTotal: 0,
@@ -22,6 +22,22 @@ class PlayArea extends React.Component {
     onChange = e => {
         this.setState({ entry: e.target.value });
     };
+
+    componentDidMount(){
+        this.chooseWord();
+    }
+
+    // Randomly Choose the word that will be used
+    chooseWord(){
+        let words = ["Abuse", "Adult", "Agent", "Anger", "Apple", "Award", "Basis", "Beach", "Birth", "Block", "Blood", "Board", "Brain", "Bread", "Break", "Brown", "Buyer", "Cause", "Chain", "Chair", "Chest", "Chief", "Child", "China", "Claim", "Class", "Clock", "Coach", "Coast", "Court", "Cover", "Cream", "Crime", "Cross", "Crowd", "Crown", "Cycle", "Dance", "Death", "Depth", "Doubt", "Draft", "Drama", "Dream", "Dress", "Drink", "Drive", "Earth", "Enemy", "Entry", "Error", "Event", "Faith", "Fault", "Field", "Fight", "Final", "Floor", "Focus", "Force", "Frame", "Frank", "Front", "Fruit", "Glass", "Grant", "Grass", "Green", "Group", "Guide", "Heart", "Henry", "Horse", "Hotel", "House", "Image", "Index", "Input", "Issue", "Japan", "Jones", "Judge", "Knife", "Laura", "Layer", "Level", "Lewis", "Light", "Limit", "Lunch", "Major", "March", "Match", "Metal", "Model", "Money", "Month", "Motor", "Mouth", "Music", "Night", "Noise", "North", "Novel", "Nurse", "Offer", "Order", "Other", "Owner", "Panel", "Paper", "Party", "Peace", "Peter", "Phase", "Phone", "Piece", "Pilot", "Pitch", "Place", "Plane", "Plant", "Plate", "Point", "Pound", "Power", "Press", "Price", "Pride", "Prize", "Proof", "Queen", "Radio", "Range", "Ratio", "Reply", "Right", "River", "Round", "Route", "Rugby", "Scale", "Scene", "Scope", "Score", "Sense", "Shape", "Share", "Sheep", "Sheet", "Shift", "Shirt", "Shock", "Sight", "Simon", "Skill", "Sleep", "Smile", "Smith", "Smoke", "Sound", "South", "Space", "Speed", "Spite", "Sport", "Squad", "Staff", "Stage", "Start", "State", "Steam", "Steel", "Stock", "Stone", "Store", "Study", "Stuff", "Style", "Sugar", "Table", "Taste", "Terry", "Theme", "Thing", "Title", "Total", "Touch", "Tower", "Track", "Trade", "Train", "Trend", "Trial", "Trust", "Truth", "Uncle", "Union", "Unity", "Value", "Video", "Visit", "Voice", "Waste", "Watch", "Water", "While", "White", "Whole", "Woman", "World", "Youth"];
+
+        // Add the word to the state
+
+        this.state.answer = words[Math.floor(Math.random()*words.length)].toLowerCase();
+
+        console.log("this is the word used",this.state.answer);
+    }
+
 
     handleGuessSubmit = event => {
         event.preventDefault();
@@ -62,7 +78,7 @@ class PlayArea extends React.Component {
                 this.state.guess6 = this.state.entry;
                 this.state.guesses.push(this.state.entry);
                 console.log("guess 6:", this.state.guess6);
-                alert("You Lose. Game over.")
+                alert("You Lose. The answer was " + this.state.answer);
             }
 
             console.log(this.state.guesses);

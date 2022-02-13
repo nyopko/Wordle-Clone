@@ -35,6 +35,12 @@ class PlayArea extends React.Component {
         this.chooseWord();
     }
 
+    resetForm = () => {
+        this.setState({
+            entry: '',
+        })
+     }
+
     // Randomly Choose the word that will be used
     chooseWord() {
         let words = ["Abuse", "Adult", "Agent", "Anger", "Apple", "Award", "Basis", "Beach", "Birth", "Block", "Blood", "Board", "Brain", "Bread", "Break", "Brown", "Buyer", "Cause", "Chain", "Chair", "Chest", "Chief", "Child", "China", "Claim", "Class", "Clock", "Coach", "Coast", "Court", "Cover", "Cream", "Crime", "Cross", "Crowd", "Crown", "Cycle", "Dance", "Death", "Depth", "Doubt", "Draft", "Drama", "Dream", "Dress", "Drink", "Drive", "Earth", "Enemy", "Entry", "Error", "Event", "Faith", "Fault", "Field", "Fight", "Final", "Floor", "Focus", "Force", "Frame", "Frank", "Front", "Fruit", "Glass", "Grant", "Grass", "Green", "Group", "Guide", "Heart", "Henry", "Horse", "Hotel", "House", "Image", "Index", "Input", "Issue", "Japan", "Jones", "Judge", "Knife", "Laura", "Layer", "Level", "Lewis", "Light", "Limit", "Lunch", "Major", "March", "Match", "Metal", "Model", "Money", "Month", "Motor", "Mouth", "Music", "Night", "Noise", "North", "Novel", "Nurse", "Offer", "Order", "Other", "Owner", "Panel", "Paper", "Party", "Peace", "Peter", "Phase", "Phone", "Piece", "Pilot", "Pitch", "Place", "Plane", "Plant", "Plate", "Point", "Pound", "Power", "Press", "Price", "Pride", "Prize", "Proof", "Queen", "Radio", "Range", "Ratio", "Reply", "Right", "River", "Round", "Route", "Rugby", "Scale", "Scene", "Scope", "Score", "Sense", "Shape", "Share", "Sheep", "Sheet", "Shift", "Shirt", "Shock", "Sight", "Simon", "Skill", "Sleep", "Smile", "Smith", "Smoke", "Sound", "South", "Space", "Speed", "Spite", "Sport", "Squad", "Staff", "Stage", "Start", "State", "Steam", "Steel", "Stock", "Stone", "Store", "Study", "Stuff", "Style", "Sugar", "Table", "Taste", "Terry", "Theme", "Thing", "Title", "Total", "Touch", "Tower", "Track", "Trade", "Train", "Trend", "Trial", "Trust", "Truth", "Uncle", "Union", "Unity", "Value", "Video", "Visit", "Voice", "Waste", "Watch", "Water", "While", "White", "Whole", "Woman", "World", "Youth"];
@@ -108,13 +114,16 @@ class PlayArea extends React.Component {
             // Fill graveyard
             this.fillGraveYard();
 
-            //   event.target.reset();
+           this.state.entry = "";
 
         }
         else {
             alert("Duplicate Entry Please Try Again");
         }
 
+        // Resets the form after submit 
+        
+        this.resetForm();
 
     };
     // Fill Letter Graveyard
@@ -421,12 +430,6 @@ class PlayArea extends React.Component {
                             </Row>
                             </div>
                         </Container>
-
-
-
-
-
-
                             <h4>{this.state.guess1}</h4>
                             <h4>{this.state.guess2}</h4>
                             <h4>{this.state.guess3}</h4>
@@ -443,7 +446,7 @@ class PlayArea extends React.Component {
                                         onChange={this.onChange}
                                     />
                                 </label>
-                                <input type="submit" value="Submit" />
+                                <input type="submit" value="Submit"/>
                             </form>
                         </Col>
                     </Row>

@@ -571,8 +571,8 @@ class PlayArea extends React.Component {
                     <Row>
                         <Col>
                             <div className='mobile-letter-graveyard'>
-                                <h3>Graveyard</h3>
-                                <h3>{this.state.lettersUsed.join(", ")}</h3>
+                                <h4>Graveyard</h4>
+                                <h5>{this.state.lettersUsed.join(", ")}</h5>
                             </div>
                         </Col>
                     </Row>

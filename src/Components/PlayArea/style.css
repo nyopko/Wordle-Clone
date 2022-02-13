@@ -1,6 +1,6 @@
 .play-area{
-    margin-top: -20px;
-    background-color: black;
+    margin-top: -20px;   
+    height: 100%;
 }
 
 .guess-display{
@@ -77,3 +77,57 @@
 .mobile-letter-graveyard{
     display: none;
 }
+
+/* Mobile */
+
+@media only screen and (max-width: 600px) {
+    .letter-graveyard {
+      display: none;
+    }
+
+    .grid-col{
+        background-color: green;
+        margin-left: 38%;
+        width: 20%;
+        /* height: 70%; */
+    }
+    .mobile-letter-graveyard{
+    display: block;
+    margin-bottom: 40%;
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+    }
+
+    .entry-text-display{
+    background-color: white;
+    height: 40px;
+        
+    }
+    .form-and-entry{
+    background-color: white;
+    width: 100%;
+    margin-left: 60%;
+    }    
+
+    .grey-block{
+    background-color: grey;
+    margin-top: 20px;
+    width: 20px;
+    height: 20px;
+    }
+    
+    .green-block{
+    background: green;
+    margin-top: 20px;
+    width: 20px;
+    height: 20px;
+    }
+    
+    .yellow-block{
+    background-color: yellow;
+    margin-top: 20px;
+    width: 20px;
+    height: 20px;
+    }
+  }

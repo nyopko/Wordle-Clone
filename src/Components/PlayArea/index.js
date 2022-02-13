@@ -12,6 +12,12 @@ class PlayArea extends React.Component {
         guess4: "",
         guess5: "",
         guess6: "",
+        guess1Letters: [],
+        guess2Letters: [],
+        guess3Letters: [],
+        guess4Letters: [],
+        guess5Letters: [],
+        guess6Letters: [],
         guesses: [],
         answer: "",
         lettersUsed: [],
@@ -61,6 +67,8 @@ class PlayArea extends React.Component {
                 this.state.guess1 = this.state.entry;
                 this.state.guesses.push(this.state.entry);
                 console.log("guess 1:", this.state.guess1);
+                // Split the letters to fill letters array
+                this.state.guess1Letters = this.state.guess1.split("");
                 // Game Logic
                 this.gameLogic(1);
             }
@@ -69,6 +77,8 @@ class PlayArea extends React.Component {
                 this.state.guess2 = this.state.entry;
                 this.state.guesses.push(this.state.entry);
                 console.log("guess 2:", this.state.guess2);
+                // Split the letters to fill letters array
+                this.state.guess2Letters = this.state.guess2.split("");
                 // Game Logic
                 this.gameLogic(2);
             }
@@ -77,6 +87,8 @@ class PlayArea extends React.Component {
                 this.state.guess3 = this.state.entry;
                 this.state.guesses.push(this.state.entry);
                 console.log("guess 3:", this.state.guess3);
+                // Split the letters to fill letters array
+                this.state.guess3Letters = this.state.guess3.split("");
                 // Game Logic
                 this.gameLogic(3);
             }
@@ -85,6 +97,8 @@ class PlayArea extends React.Component {
                 this.state.guess4 = this.state.entry;
                 this.state.guesses.push(this.state.entry);
                 console.log("guess 4:", this.state.guess4);
+                // Split the letters to fill letters array
+                this.state.guess4Letters = this.state.guess4.split("");
                 // Game Logic
                 this.gameLogic(4);
             }
@@ -93,6 +107,8 @@ class PlayArea extends React.Component {
                 this.state.guess5 = this.state.entry;
                 this.state.guesses.push(this.state.entry);
                 console.log("guess 5:", this.state.guess5);
+                // Split the letters to fill letters array
+                this.state.guess5Letters = this.state.guess5.split("");
                 // Game Logic
                 this.gameLogic(5);
             }
@@ -101,9 +117,15 @@ class PlayArea extends React.Component {
                 this.state.guess6 = this.state.entry;
                 this.state.guesses.push(this.state.entry);
                 console.log("guess 6:", this.state.guess6);
+                // Split the letters to fill letters array
+                this.state.guess6Letters = this.state.guess6.split("");
                 // Game Logic
                 this.gameLogic(6);
                 alert("You Lose. The answer was " + this.state.answer);
+
+                // Reload page
+
+                window.location.reload();
             }
 
             console.log(this.state.guesses);
@@ -122,7 +144,7 @@ class PlayArea extends React.Component {
         }
 
         // Resets the form after submit 
-        
+
         this.resetForm();
 
     };
@@ -272,171 +294,259 @@ class PlayArea extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='play-area'>
                 <Container>
                     <Row>
                         <Col>
-
-
+                        <div className='game-board'>
                         <Container>
                             {/* Grid Row 1 */}
                             <div className='grid-row'>
                             <Row>
+                                <div className='grid-col'>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess1[0] === "green") ? "green-block" : (this.state.scoreLogGuess1[0] === "yellow") ? "yellow-block" : "grey-block"}>
+                                    <h3 className="letter-display">{this.state.guess1Letters[0]}</h3>
                                 </div>
                                 </Col>
+                                </div>
+                                <div className='grid-col'>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess1[1] === "green") ? "green-block" : (this.state.scoreLogGuess1[1] === "yellow") ? "yellow-block" : "grey-block"}>
+                                <h3 className="letter-display">{this.state.guess1Letters[1]}</h3>
                                 </div>
                                 </Col>
+                                </div>
+                                <div className='grid-col'>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess1[2] === "green") ? "green-block" : (this.state.scoreLogGuess1[2] === "yellow") ? "yellow-block" : "grey-block"}>
+                                <h3 className="letter-display">{this.state.guess1Letters[2]}</h3>
                                 </div>
                                 </Col>
+                                </div>
+                                <div className='grid-col'>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess1[3] === "green") ? "green-block" : (this.state.scoreLogGuess1[3] === "yellow") ? "yellow-block" : "grey-block"}>
+                                <h3 className="letter-display">{this.state.guess1Letters[3]}</h3>
                                 </div>
                                 </Col>
+                                </div>
+                                <div className='grid-col'>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess1[4] === "green") ? "green-block" : (this.state.scoreLogGuess1[4] === "yellow") ? "yellow-block" : "grey-block"}>
+                                <h3 className="letter-display">{this.state.guess1Letters[4]}</h3>
                                 </div>
                                 </Col>
+                                </div>
                             </Row>
                             </div>
                             {/* Grid Row 2 */}
                             <div className='grid-row'>
                             <Row>
+                            <div className='grid-col'>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess2[0] === "green") ? "green-block" : (this.state.scoreLogGuess2[0] === "yellow") ? "yellow-block" : "grey-block"}>
+                                <h3 className="letter-display">{this.state.guess2Letters[0]}</h3>
                                 </div>
                                 </Col>
+                                </div>
+                                <div className='grid-col'>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess2[1] === "green") ? "green-block" : (this.state.scoreLogGuess2[1] === "yellow") ? "yellow-block" : "grey-block"}>
+                                <h3 className="letter-display">{this.state.guess2Letters[1]}</h3>
                                 </div>
                                 </Col>
+                                </div>
+                                <div className='grid-col'>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess2[2] === "green") ? "green-block" : (this.state.scoreLogGuess2[2] === "yellow") ? "yellow-block" : "grey-block"}>
+                                <h3 className="letter-display">{this.state.guess2Letters[2]}</h3>
                                 </div>
                                 </Col>
+                                </div>
+                                <div className='grid-col'>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess2[3] === "green") ? "green-block" : (this.state.scoreLogGuess2[3] === "yellow") ? "yellow-block" : "grey-block"}>
+                                <h3 className="letter-display">{this.state.guess2Letters[3]}</h3>
                                 </div>
                                 </Col>
+                                </div>
+                                <div className='grid-col'>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess2[4] === "green") ? "green-block" : (this.state.scoreLogGuess2[4] === "yellow") ? "yellow-block" : "grey-block"}>
+                                <h3 className="letter-display">{this.state.guess2Letters[4]}</h3>
                                 </div>
                                 </Col>
+                                </div>
                             </Row>
                             </div>
                             {/* Grid Row 3 */}
                             <div className='grid-row'>
                             <Row>
+                            <div className='grid-col'>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess3[0] === "green") ? "green-block" : (this.state.scoreLogGuess3[0] === "yellow") ? "yellow-block" : "grey-block"}>
+                                <h3 className="letter-display">{this.state.guess3Letters[0]}</h3>
                                 </div>
                                 </Col>
+                                </div>
+                                <div className='grid-col'>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess3[1] === "green") ? "green-block" : (this.state.scoreLogGuess3[1] === "yellow") ? "yellow-block" : "grey-block"}>
+                                <h3 className="letter-display">{this.state.guess3Letters[1]}</h3>
                                 </div>
                                 </Col>
+                                </div>
+                                <div className='grid-col'>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess3[2] === "green") ? "green-block" : (this.state.scoreLogGuess3[2] === "yellow") ? "yellow-block" : "grey-block"}>
+                                <h3 className="letter-display">{this.state.guess3Letters[2]}</h3>
                                 </div>
                                 </Col>
+                                </div>
+                                <div className='grid-col'>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess3[3] === "green") ? "green-block" : (this.state.scoreLogGuess3[3] === "yellow") ? "yellow-block" : "grey-block"}>
+                                <h3 className="letter-display">{this.state.guess3Letters[3]}</h3>
                                 </div>
                                 </Col>
+                                </div>
+                                <div className='grid-col'>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess3[4] === "green") ? "green-block" : (this.state.scoreLogGuess3[4] === "yellow") ? "yellow-block" : "grey-block"}>
+                                <h3 className="letter-display">{this.state.guess3Letters[4]}</h3>
                                 </div>
                                 </Col>
+                                </div>
                             </Row>
                             </div>
                             {/* Grid Row 4 */}
                             <div className='grid-row'>
                             <Row>
+                            <div className='grid-col'>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess4[0] === "green") ? "green-block" : (this.state.scoreLogGuess4[0] === "yellow") ? "yellow-block" : "grey-block"}>
+                                <h3 className="letter-display">{this.state.guess4Letters[0]}</h3>
                                 </div>
                                 </Col>
+                                </div>
+                                <div className='grid-col'>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess4[1] === "green") ? "green-block" : (this.state.scoreLogGuess4[1] === "yellow") ? "yellow-block" : "grey-block"}>
+                                <h3 className="letter-display">{this.state.guess4Letters[1]}</h3>
                                 </div>
                                 </Col>
+                                </div>
+                                <div className='grid-col'>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess4[2] === "green") ? "green-block" : (this.state.scoreLogGuess4[2] === "yellow") ? "yellow-block" : "grey-block"}>
+                                <h3 className="letter-display">{this.state.guess4Letters[2]}</h3>
                                 </div>
                                 </Col>
+                                </div>
+                                <div className='grid-col'>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess4[3] === "green") ? "green-block" : (this.state.scoreLogGuess4[3] === "yellow") ? "yellow-block" : "grey-block"}>
+                                <h3 className="letter-display">{this.state.guess4Letters[3]}</h3>
                                 </div>
                                 </Col>
+                                </div>
+                                <div className='grid-col'>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess4[4] === "green") ? "green-block" : (this.state.scoreLogGuess4[4] === "yellow") ? "yellow-block" : "grey-block"}>
+                                <h3 className="letter-display">{this.state.guess4Letters[4]}</h3>
                                 </div>
                                 </Col>
+                                </div>
                             </Row>
                             </div>
                             {/* Grid Row 5 */}
                             <div className='grid-row'>
                             <Row>
+                            <div className='grid-col'>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess5[0] === "green") ? "green-block" : (this.state.scoreLogGuess5[0] === "yellow") ? "yellow-block" : "grey-block"}>
+                                <h3 className="letter-display">{this.state.guess5Letters[0]}</h3>
                                 </div>
                                 </Col>
+                                </div>
+                                <div className='grid-col'>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess5[1] === "green") ? "green-block" : (this.state.scoreLogGuess5[1] === "yellow") ? "yellow-block" : "grey-block"}>
+                                <h3 className="letter-display">{this.state.guess5Letters[1]}</h3>
                                 </div>
                                 </Col>
+                                </div>
+                                <div className='grid-col'>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess5[2] === "green") ? "green-block" : (this.state.scoreLogGuess5[2] === "yellow") ? "yellow-block" : "grey-block"}>
+                                <h3 className="letter-display">{this.state.guess5Letters[2]}</h3>
                                 </div>
                                 </Col>
+                                </div>
+                                <div className='grid-col'>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess5[3] === "green") ? "green-block" : (this.state.scoreLogGuess5[3] === "yellow") ? "yellow-block" : "grey-block"}>
+                                <h3 className="letter-display">{this.state.guess5Letters[3]}</h3>
                                 </div>
                                 </Col>
+                                </div>
+                                <div className='grid-col'>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess5[4] === "green") ? "green-block" : (this.state.scoreLogGuess5[4] === "yellow") ? "yellow-block" : "grey-block"}>
+                                <h3 className="letter-display">{this.state.guess5Letters[4]}</h3>
                                 </div>
                                 </Col>
+                                </div>
                             </Row>
                             </div>
                             {/* Grid Row 6 */}
                             <div className='grid-row'>
                             <Row>
+                            <div className='grid-col'>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess6[0] === "green") ? "green-block" : (this.state.scoreLogGuess6[0] === "yellow") ? "yellow-block" : "grey-block"}>
+                                <h3 className="letter-display">{this.state.guess6Letters[0]}</h3>
                                 </div>
                                 </Col>
+                                </div>
+                                <div className='grid-col'>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess6[1] === "green") ? "green-block" : (this.state.scoreLogGuess6[1] === "yellow") ? "yellow-block" : "grey-block"}>
+                                <h3 className="letter-display">{this.state.guess6Letters[1]}</h3>
                                 </div>
                                 </Col>
+                                </div>
+                                <div className='grid-col'>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess6[2] === "green") ? "green-block" : (this.state.scoreLogGuess6[2] === "yellow") ? "yellow-block" : "grey-block"}>
+                                <h3 className="letter-display">{this.state.guess6Letters[2]}</h3>
                                 </div>
                                 </Col>
+                                </div>
+                                <div className='grid-col'>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess6[3] === "green") ? "green-block" : (this.state.scoreLogGuess6[3] === "yellow") ? "yellow-block" : "grey-block"}>
+                                <h3 className="letter-display">{this.state.guess6Letters[3]}</h3>
                                 </div>
                                 </Col>
+                                </div>
+                                <div className='grid-col'>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess6[4] === "green") ? "green-block" : (this.state.scoreLogGuess6[4] === "yellow") ? "yellow-block" : "grey-block"}>
+                                <h3 className="letter-display">{this.state.guess6Letters[4]}</h3>
                                 </div>
                                 </Col>
+                                </div>
                             </Row>
                             </div>
                         </Container>
-                            <h4>{this.state.guess1}</h4>
-                            <h4>{this.state.guess2}</h4>
-                            <h4>{this.state.guess3}</h4>
-                            <h4>{this.state.guess4}</h4>
-                            <h4>{this.state.guess5}</h4>
-                            <h4>{this.state.guess6}</h4>
-                            <h3>{this.state.entry}</h3>
+                        </div>
+                        <div className='form-and-entry'>
+                            <div className='entry-text-display'>
+                            <h3 className='user-text'>{this.state.entry}</h3>
+                            </div>
+                            <div className='entry-form'>
                             <form onSubmit={this.handleGuessSubmit}>
                                 <label>
                                     <input
@@ -448,13 +558,21 @@ class PlayArea extends React.Component {
                                 </label>
                                 <input type="submit" value="Submit"/>
                             </form>
+                            </div>
+                            </div>
+                        </Col>
+                        <Col>
+                            <div className='letter-graveyard'>
+                                <h5>Graveyard</h5>
+                                <h5>{this.state.lettersUsed.join(", ")}</h5>
+                            </div>
                         </Col>
                     </Row>
                     <Row>
                         <Col>
-                            <div className='letter-graveyard'>
+                            <div className='mobile-letter-graveyard'>
                                 <h3>Graveyard</h3>
-                                <h3>{this.state.lettersUsed.join(",")}</h3>
+                                <h3>{this.state.lettersUsed.join(", ")}</h3>
                             </div>
                         </Col>
                     </Row>

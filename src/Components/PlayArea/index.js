@@ -24,6 +24,7 @@ class PlayArea extends React.Component {
         scoreLogGuess4: [],
         scoreLogGuess5: [],
         scoreLogGuess6: [],
+        color: "red",
     };
 
     onChange = e => {
@@ -262,6 +263,16 @@ class PlayArea extends React.Component {
     }
 
     render() {
+        let greyBlock = {
+            color: "grey"
+          };
+          let greenBlock = {
+            color: "green"
+          };
+          let yellowBlock = {
+            color: "yellow"
+          };
+
         return (
             <div>
                 <Container>
@@ -269,17 +280,159 @@ class PlayArea extends React.Component {
                         <Col>
                         </Col>
                         <Col>
-                            <div>{this.state.scoreLogGuess1.map(o => `${o} `)}</div>
+
+
+                        <Container>
+                            {/* Grid Row 1 */}
+                            <Row>
+                                <Col>
+                                <div className={(this.state.scoreLogGuess1[0] === "green") ? "green-block" : (this.state.scoreLogGuess1[0] === "yellow") ? "yellow-block" : "grey-block"}>
+                                </div>
+                                </Col>
+                                <Col>
+                                <div className={(this.state.scoreLogGuess1[1] === "green") ? "green-block" : (this.state.scoreLogGuess1[1] === "yellow") ? "yellow-block" : "grey-block"}>
+                                </div>
+                                </Col>
+                                <Col>
+                                <div className={(this.state.scoreLogGuess1[2] === "green") ? "green-block" : (this.state.scoreLogGuess1[2] === "yellow") ? "yellow-block" : "grey-block"}>
+                                </div>
+                                </Col>
+                                <Col>
+                                <div className={(this.state.scoreLogGuess1[3] === "green") ? "green-block" : (this.state.scoreLogGuess1[3] === "yellow") ? "yellow-block" : "grey-block"}>
+                                </div>
+                                </Col>
+                                <Col>
+                                <div className={(this.state.scoreLogGuess1[4] === "green") ? "green-block" : (this.state.scoreLogGuess1[4] === "yellow") ? "yellow-block" : "grey-block"}>
+                                </div>
+                                </Col>
+                            </Row>
+                            {/* Grid Row 2 */}
+                            <Row>
+                                <Col>
+                                <div className={(this.state.scoreLogGuess2[0] === "green") ? "green-block" : (this.state.scoreLogGuess2[0] === "yellow") ? "yellow-block" : "grey-block"}>
+                                </div>
+                                </Col>
+                                <Col>
+                                <div className={(this.state.scoreLogGuess2[1] === "green") ? "green-block" : (this.state.scoreLogGuess2[1] === "yellow") ? "yellow-block" : "grey-block"}>
+                                </div>
+                                </Col>
+                                <Col>
+                                <div className={(this.state.scoreLogGuess2[2] === "green") ? "green-block" : (this.state.scoreLogGuess2[2] === "yellow") ? "yellow-block" : "grey-block"}>
+                                </div>
+                                </Col>
+                                <Col>
+                                <div className={(this.state.scoreLogGuess2[3] === "green") ? "green-block" : (this.state.scoreLogGuess2[3] === "yellow") ? "yellow-block" : "grey-block"}>
+                                </div>
+                                </Col>
+                                <Col>
+                                <div className={(this.state.scoreLogGuess2[4] === "green") ? "green-block" : (this.state.scoreLogGuess2[4] === "yellow") ? "yellow-block" : "grey-block"}>
+                                </div>
+                                </Col>
+                            </Row>
+                            {/* Grid Row 3 */}
+                            <Row>
+                                <Col>
+                                <div className={(this.state.scoreLogGuess3[0] === "green") ? "green-block" : (this.state.scoreLogGuess3[0] === "yellow") ? "yellow-block" : "grey-block"}>
+                                </div>
+                                </Col>
+                                <Col>
+                                <div className={(this.state.scoreLogGuess3[1] === "green") ? "green-block" : (this.state.scoreLogGuess3[1] === "yellow") ? "yellow-block" : "grey-block"}>
+                                </div>
+                                </Col>
+                                <Col>
+                                <div className={(this.state.scoreLogGuess3[2] === "green") ? "green-block" : (this.state.scoreLogGuess3[2] === "yellow") ? "yellow-block" : "grey-block"}>
+                                </div>
+                                </Col>
+                                <Col>
+                                <div className={(this.state.scoreLogGuess3[3] === "green") ? "green-block" : (this.state.scoreLogGuess3[3] === "yellow") ? "yellow-block" : "grey-block"}>
+                                </div>
+                                </Col>
+                                <Col>
+                                <div className={(this.state.scoreLogGuess3[4] === "green") ? "green-block" : (this.state.scoreLogGuess3[4] === "yellow") ? "yellow-block" : "grey-block"}>
+                                </div>
+                                </Col>
+                            </Row>
+                            {/* Grid Row 4 */}
+                            <Row>
+                                <Col>
+                                <div className={(this.state.scoreLogGuess4[0] === "green") ? "green-block" : (this.state.scoreLogGuess4[0] === "yellow") ? "yellow-block" : "grey-block"}>
+                                </div>
+                                </Col>
+                                <Col>
+                                <div className={(this.state.scoreLogGuess4[1] === "green") ? "green-block" : (this.state.scoreLogGuess4[1] === "yellow") ? "yellow-block" : "grey-block"}>
+                                </div>
+                                </Col>
+                                <Col>
+                                <div className={(this.state.scoreLogGuess4[2] === "green") ? "green-block" : (this.state.scoreLogGuess4[2] === "yellow") ? "yellow-block" : "grey-block"}>
+                                </div>
+                                </Col>
+                                <Col>
+                                <div className={(this.state.scoreLogGuess4[3] === "green") ? "green-block" : (this.state.scoreLogGuess4[3] === "yellow") ? "yellow-block" : "grey-block"}>
+                                </div>
+                                </Col>
+                                <Col>
+                                <div className={(this.state.scoreLogGuess4[4] === "green") ? "green-block" : (this.state.scoreLogGuess4[4] === "yellow") ? "yellow-block" : "grey-block"}>
+                                </div>
+                                </Col>
+                            </Row>
+                            {/* Grid Row 5 */}
+                            <Row>
+                                <Col>
+                                <div className={(this.state.scoreLogGuess5[0] === "green") ? "green-block" : (this.state.scoreLogGuess5[0] === "yellow") ? "yellow-block" : "grey-block"}>
+                                </div>
+                                </Col>
+                                <Col>
+                                <div className={(this.state.scoreLogGuess5[1] === "green") ? "green-block" : (this.state.scoreLogGuess5[1] === "yellow") ? "yellow-block" : "grey-block"}>
+                                </div>
+                                </Col>
+                                <Col>
+                                <div className={(this.state.scoreLogGuess5[2] === "green") ? "green-block" : (this.state.scoreLogGuess5[2] === "yellow") ? "yellow-block" : "grey-block"}>
+                                </div>
+                                </Col>
+                                <Col>
+                                <div className={(this.state.scoreLogGuess5[3] === "green") ? "green-block" : (this.state.scoreLogGuess5[3] === "yellow") ? "yellow-block" : "grey-block"}>
+                                </div>
+                                </Col>
+                                <Col>
+                                <div className={(this.state.scoreLogGuess5[4] === "green") ? "green-block" : (this.state.scoreLogGuess5[4] === "yellow") ? "yellow-block" : "grey-block"}>
+                                </div>
+                                </Col>
+                            </Row>
+                            {/* Grid Row 6 */}
+                            <Row>
+                                <Col>
+                                <div className={(this.state.scoreLogGuess6[0] === "green") ? "green-block" : (this.state.scoreLogGuess6[0] === "yellow") ? "yellow-block" : "grey-block"}>
+                                </div>
+                                </Col>
+                                <Col>
+                                <div className={(this.state.scoreLogGuess6[1] === "green") ? "green-block" : (this.state.scoreLogGuess6[1] === "yellow") ? "yellow-block" : "grey-block"}>
+                                </div>
+                                </Col>
+                                <Col>
+                                <div className={(this.state.scoreLogGuess6[2] === "green") ? "green-block" : (this.state.scoreLogGuess6[2] === "yellow") ? "yellow-block" : "grey-block"}>
+                                </div>
+                                </Col>
+                                <Col>
+                                <div className={(this.state.scoreLogGuess6[3] === "green") ? "green-block" : (this.state.scoreLogGuess6[3] === "yellow") ? "yellow-block" : "grey-block"}>
+                                </div>
+                                </Col>
+                                <Col>
+                                <div className={(this.state.scoreLogGuess6[4] === "green") ? "green-block" : (this.state.scoreLogGuess6[4] === "yellow") ? "yellow-block" : "grey-block"}>
+                                </div>
+                                </Col>
+                            </Row>
+                        </Container>
+
+
+
+
+
+
                             <h4>{this.state.guess1}</h4>
-                            <div>{this.state.scoreLogGuess2.map(o => `${o} `)}</div>
                             <h4>{this.state.guess2}</h4>
-                            <div>{this.state.scoreLogGuess3.map(o => `${o} `)}</div>
                             <h4>{this.state.guess3}</h4>
-                            <div>{this.state.scoreLogGuess4.map(o => `${o} `)}</div>
                             <h4>{this.state.guess4}</h4>
-                            <div>{this.state.scoreLogGuess5.map(o => `${o} `)}</div>
                             <h4>{this.state.guess5}</h4>
-                            <div>{this.state.scoreLogGuess6.map(o => `${o} `)}</div>
                             <h4>{this.state.guess6}</h4>
                             <h3>{this.state.entry}</h3>
                             <form onSubmit={this.handleGuessSubmit}>

@@ -1,3 +1,22 @@
 .guess-display{
     text-transform: uppercase;
 }
+
+.grid-space{
+    outline: 5px solid yellow;
+}
+
+.grey-block{
+    outline: 5px solid grey;
+    margin-top: 20px;
+}
+
+.green-block{
+    outline: 5px solid green;
+    margin-top: 20px;
+}
+
+.yellow-block{
+    outline: 5px solid yellow;
+    margin-top: 20px;
+}

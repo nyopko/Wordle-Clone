@@ -267,12 +267,11 @@ class PlayArea extends React.Component {
                 <Container>
                     <Row>
                         <Col>
-                        </Col>
-                        <Col>
 
 
                         <Container>
                             {/* Grid Row 1 */}
+                            <div className='grid-row'>
                             <Row>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess1[0] === "green") ? "green-block" : (this.state.scoreLogGuess1[0] === "yellow") ? "yellow-block" : "grey-block"}>
@@ -295,7 +294,9 @@ class PlayArea extends React.Component {
                                 </div>
                                 </Col>
                             </Row>
+                            </div>
                             {/* Grid Row 2 */}
+                            <div className='grid-row'>
                             <Row>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess2[0] === "green") ? "green-block" : (this.state.scoreLogGuess2[0] === "yellow") ? "yellow-block" : "grey-block"}>
@@ -318,7 +319,9 @@ class PlayArea extends React.Component {
                                 </div>
                                 </Col>
                             </Row>
+                            </div>
                             {/* Grid Row 3 */}
+                            <div className='grid-row'>
                             <Row>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess3[0] === "green") ? "green-block" : (this.state.scoreLogGuess3[0] === "yellow") ? "yellow-block" : "grey-block"}>
@@ -341,7 +344,9 @@ class PlayArea extends React.Component {
                                 </div>
                                 </Col>
                             </Row>
+                            </div>
                             {/* Grid Row 4 */}
+                            <div className='grid-row'>
                             <Row>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess4[0] === "green") ? "green-block" : (this.state.scoreLogGuess4[0] === "yellow") ? "yellow-block" : "grey-block"}>
@@ -364,7 +369,9 @@ class PlayArea extends React.Component {
                                 </div>
                                 </Col>
                             </Row>
+                            </div>
                             {/* Grid Row 5 */}
+                            <div className='grid-row'>
                             <Row>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess5[0] === "green") ? "green-block" : (this.state.scoreLogGuess5[0] === "yellow") ? "yellow-block" : "grey-block"}>
@@ -387,7 +394,9 @@ class PlayArea extends React.Component {
                                 </div>
                                 </Col>
                             </Row>
+                            </div>
                             {/* Grid Row 6 */}
+                            <div className='grid-row'>
                             <Row>
                                 <Col>
                                 <div className={(this.state.scoreLogGuess6[0] === "green") ? "green-block" : (this.state.scoreLogGuess6[0] === "yellow") ? "yellow-block" : "grey-block"}>
@@ -410,6 +419,7 @@ class PlayArea extends React.Component {
                                 </div>
                                 </Col>
                             </Row>
+                            </div>
                         </Container>
 
 
@@ -435,8 +445,6 @@ class PlayArea extends React.Component {
                                 </label>
                                 <input type="submit" value="Submit" />
                             </form>
-                        </Col>
-                        <Col>
                         </Col>
                     </Row>
                     <Row>

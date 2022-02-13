@@ -7,16 +7,27 @@
 }
 
 .grey-block{
-    outline: 5px solid grey;
+    background-color: grey;
     margin-top: 20px;
+    width: 20px;
+    height: 20px;
 }
 
 .green-block{
-    outline: 5px solid green;
+    background: green;
     margin-top: 20px;
+    width: 20px;
+    height: 20px;
 }
 
 .yellow-block{
-    outline: 5px solid yellow;
+   background-color: yellow;
     margin-top: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+.grid-row{
+    width: 90%;
+    margin-left: 5%;
 }

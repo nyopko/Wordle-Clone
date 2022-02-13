@@ -49,7 +49,6 @@ class PlayArea extends React.Component {
 
     handleGuessSubmit = event => {
         event.preventDefault();
-        // Win Condition
         if (!this.state.guesses.includes(this.state.entry)) {
             //   Guess 1
             if (this.state.count === 1) {
@@ -154,6 +153,19 @@ class PlayArea extends React.Component {
         }
         console.log("score arr", scoreArr, "score total:", scoreArr.reduce((a, b) => a + b, 0));
 
+        // Win condition check if the score = 10
+        if (scoreArr.reduce((a, b) => a + b, 0) === 10) {
+
+            // Alert Player of Win
+
+            alert("You did it! Congrats!");
+
+            // Reload page
+
+            window.location.reload();
+
+        }
+
         this.state.scoreLog = scoreArr;
 
         for(let i = 0; i < scoreArr.length; i++){
@@ -247,32 +259,9 @@ class PlayArea extends React.Component {
             }
             console.log("6", this.state.scoreLogGuess6);
         }
-
-        // Win condition check if the score = 10
-        if (scoreArr.reduce((a, b) => a + b, 0) === 10) {
-
-            // Alert Player of Win
-
-            alert("You did it! Congrats!");
-
-            // Reload page
-
-            window.location.reload();
-
-        }
     }
 
     render() {
-        let greyBlock = {
-            color: "grey"
-          };
-          let greenBlock = {
-            color: "green"
-          };
-          let yellowBlock = {
-            color: "yellow"
-          };
-
         return (
             <div>
                 <Container>

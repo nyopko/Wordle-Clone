@@ -18,6 +18,12 @@ class PlayArea extends React.Component {
         winArr: [2, 2, 2, 2, 2],
         scoreTotal: 0,
         scoreLog: [0, 0, 0, 0, 0],
+        scoreLogGuess1: [],
+        scoreLogGuess2: [],
+        scoreLogGuess3: [],
+        scoreLogGuess4: [],
+        scoreLogGuess5: [],
+        scoreLogGuess6: [],
     };
 
     onChange = e => {
@@ -49,36 +55,48 @@ class PlayArea extends React.Component {
                 this.state.guess1 = this.state.entry;
                 this.state.guesses.push(this.state.entry);
                 console.log("guess 1:", this.state.guess1);
+                // Game Logic
+                this.gameLogic(1);
             }
             //   Guess 2
             if ((this.state.count === 2)) {
                 this.state.guess2 = this.state.entry;
                 this.state.guesses.push(this.state.entry);
                 console.log("guess 2:", this.state.guess2);
+                // Game Logic
+                this.gameLogic(2);
             }
             //   Guess 3  
             if (this.state.count === 3) {
                 this.state.guess3 = this.state.entry;
                 this.state.guesses.push(this.state.entry);
                 console.log("guess 3:", this.state.guess3);
+                // Game Logic
+                this.gameLogic(3);
             }
             //   Guess 4
             if (this.state.count === 4) {
                 this.state.guess4 = this.state.entry;
                 this.state.guesses.push(this.state.entry);
                 console.log("guess 4:", this.state.guess4);
+                // Game Logic
+                this.gameLogic(4);
             }
             //   Guess 5  
             if (this.state.count === 5) {
                 this.state.guess5 = this.state.entry;
                 this.state.guesses.push(this.state.entry);
                 console.log("guess 5:", this.state.guess5);
+                // Game Logic
+                this.gameLogic(5);
             }
             //   Guess 6  
             if (this.state.count === 6) {
                 this.state.guess6 = this.state.entry;
                 this.state.guesses.push(this.state.entry);
                 console.log("guess 6:", this.state.guess6);
+                // Game Logic
+                this.gameLogic(6);
                 alert("You Lose. The answer was " + this.state.answer);
             }
 
@@ -90,9 +108,6 @@ class PlayArea extends React.Component {
             // Fill graveyard
             this.fillGraveYard();
 
-            // Game Logic
-
-            this.gameLogic();
             //   event.target.reset();
 
         }
@@ -119,7 +134,7 @@ class PlayArea extends React.Component {
 
     }
 
-    gameLogic() {
+    gameLogic(guessNum) {
         let scoreArr = [];
         let entryArr = this.state.entry.split("");
         let answerArr = this.state.answer.split("");
@@ -139,6 +154,98 @@ class PlayArea extends React.Component {
         console.log("score arr", scoreArr, "score total:", scoreArr.reduce((a, b) => a + b, 0));
 
         this.state.scoreLog = scoreArr;
+
+        for(let i = 0; i < scoreArr.length; i++){
+            if(scoreArr[i] == 2){
+                scoreArr[i] = "green";
+            }
+            else if(scoreArr[i] == 1){
+                scoreArr[i] = "yellow";
+            }
+            else{
+                scoreArr[i] = "grey";
+            }
+        }
+
+        if(guessNum === 1){
+            this.state.scoreLogGuess1 = scoreArr;
+            console.log("1", this.state.scoreLogGuess1);
+        }
+        if(guessNum === 2){
+            this.state.scoreLogGuess2 = scoreArr;
+            for(let number of this.state.scoreLogGuess2){
+                if(number === 2){
+                    number = "green";
+                }
+                else if(number === 1){
+                    number = "yellow";
+                }
+                else{
+                    number = "grey";
+                }
+            }
+            console.log("2", this.state.scoreLogGuess2);
+        }
+        if(guessNum === 3){
+            this.state.scoreLogGuess3 = scoreArr;
+            for(let number of this.state.scoreLogGuess3){
+                if(number === 2){
+                    number = "green";
+                }
+                else if(number === 1){
+                    number = "yellow";
+                }
+                else{
+                    number = "grey";
+                }
+            }
+            console.log("3", this.state.scoreLogGuess3);
+        }
+        if(guessNum === 4){
+            this.state.scoreLogGuess4 = scoreArr;
+            for(let number of this.state.scoreLogGuess4){
+                if(number === 2){
+                    number = "green";
+                }
+                else if(number === 1){
+                    number = "yellow";
+                }
+                else{
+                    number = "grey";
+                }
+            }
+            console.log("4", this.state.scoreLogGuess4);
+        }
+        if(guessNum === 5){
+            this.state.scoreLogGuess5 = scoreArr;
+            for(let number of this.state.scoreLogGuess5){
+                if(number === 2){
+                    number = "green";
+                }
+                else if(number === 1){
+                    number = "yellow";
+                }
+                else{
+                    number = "grey";
+                }
+            }
+            console.log("5", this.state.scoreLogGuess5);
+        }
+        if(guessNum === 6){
+            this.state.scoreLogGuess6 = scoreArr;
+            for(let number of this.state.scoreLogGuess6){
+                if(number === 2){
+                    number = "green";
+                }
+                else if(number === 1){
+                    number = "yellow";
+                }
+                else{
+                    number = "grey";
+                }
+            }
+            console.log("6", this.state.scoreLogGuess6);
+        }
 
         // Win condition check if the score = 10
         if (scoreArr.reduce((a, b) => a + b, 0) === 10) {
@@ -162,12 +269,17 @@ class PlayArea extends React.Component {
                         <Col>
                         </Col>
                         <Col>
-                            <div>{this.state.scoreLog.map(o => `${o}`)}</div>
+                            <div>{this.state.scoreLogGuess1.map(o => `${o} `)}</div>
                             <h4>{this.state.guess1}</h4>
+                            <div>{this.state.scoreLogGuess2.map(o => `${o} `)}</div>
                             <h4>{this.state.guess2}</h4>
+                            <div>{this.state.scoreLogGuess3.map(o => `${o} `)}</div>
                             <h4>{this.state.guess3}</h4>
+                            <div>{this.state.scoreLogGuess4.map(o => `${o} `)}</div>
                             <h4>{this.state.guess4}</h4>
+                            <div>{this.state.scoreLogGuess5.map(o => `${o} `)}</div>
                             <h4>{this.state.guess5}</h4>
+                            <div>{this.state.scoreLogGuess6.map(o => `${o} `)}</div>
                             <h4>{this.state.guess6}</h4>
                             <h3>{this.state.entry}</h3>
                             <form onSubmit={this.handleGuessSubmit}>

@@ -33,6 +33,7 @@
 .entry-text-display{
     background-color: pink;
     height: 80px;
+    width: 152px;
 }
 
 .letter-graveyard{
@@ -87,13 +88,13 @@
 
     .game-board{
         /* background-color: red; */
-        margin-right: -40%;
+        margin-right: -50%;
     }
 
     .grid-col{
         background-color: white;
         /* outline: 1px yellow solid; */
-        margin-left: 20%;
+        margin-left: 15%;
         width: 25%;
         /* height: 70%; */
     }
@@ -107,9 +108,9 @@
 
     .entry-text-display{
     background-color: white;
-    height: 40px;
-        
+    height: 40px; 
     }
+
     .form-and-entry{
     background-color: white;
     width: 100%;
@@ -121,7 +122,11 @@
     margin-top: -10px;
     width: 35px;
     height: 35px;
-    border-radius: 5px
+    border-radius: 5px;
+    padding-left: 20px;
+    /* padding-right: 20px; */
+    outline: 1px solid black;
+    /* padding-right: 20px; */
     }
     
     .green-block{
@@ -129,6 +134,10 @@
     margin-top: -10px;
     width: 35px;
     height: 35px;
+    border-radius: 5px;
+    padding-left: 20px;
+    /* padding-right: 20px; */
+    outline: 1px solid black;
     }
     
     .yellow-block{
@@ -136,5 +145,9 @@
     margin-top: -10px;
     width: 35px;
     height: 35px;
+    border-radius: 5px;
+    padding-left: 20px;
+    /* padding-right: 20px; */
+    outline: 1px solid black;
     }
   }

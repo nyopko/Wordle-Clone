@@ -555,14 +555,15 @@ class PlayArea extends React.Component {
                                 <div className='entry-form'>
                                     <form onSubmit={this.handleGuessSubmit}>
                                         <label>
-                                            <input
+                                            <input className='text-form-input'
                                                 maxLength="5"
-                                                placeholder=""
+                                                minLength="5"
+                                                placeholder="Enter a five letter word here."
                                                 value={this.state.entry}
                                                 onChange={this.onChange}
                                             />
                                         </label>
-                                        <input type="submit" value="Submit" />
+                                        <input className='input' type="submit" value="Submit" />
                                     </form>
                                 </div>
                             </div>

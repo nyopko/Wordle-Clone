@@ -1,3 +1,6 @@
+html{
+    background-color: #3a3a3c;
+}
 .play-area{
     margin-top: -20px;   
     height: 100%;
@@ -20,10 +23,26 @@
 }
 
 .form-and-entry{
-    background-color: yellow;
     width: 50%;
     margin-left: 50%;
+    
+    margin-top: -18%;
 
+}
+
+.input{
+    color: black;
+    font-size: 20pt;
+    height: 100px;
+    width: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.text-form-input{
+    background-color: grey!important;
+    margin-top: 60px!important;
+    text-align: center!important;
 }
 
 /* Make letter bank capitalized */
@@ -33,14 +52,14 @@
 }
 
 .entry-text-display{
-    background-color: pink;
     height: 80px;
     width: 100%;
     margin-top: -20%;
 }
 
 .letter-graveyard{
-    margin-top: 10%;
+    color: white;
+    margin-top: 5%;
     /* width: 20%; */
     /* background-color: red; */
 }
@@ -87,12 +106,34 @@
         height: 315px;
     }
 
+    .input{
+        color: black;
+        font-size: 20pt;
+        height: 50px;
+        width: 150px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .text-form-input{
+        background-color: grey!important;
+        margin-top: 0px!important;
+        text-align: center!important;
+    }
+
+    .entry-text-display{
+        background-color: #3a3a3c;
+        height: 50px;
+        width: 100%;
+        margin-top: -20%;
+    }
+
     .letter-graveyard{
         margin-top: 0%;
+        margin-bottom: 10%;
     }
 
     .grid-col{
-        background-color: white;
         margin-left: 1.5%;
         margin-right: -85px;
         width: 30%;
@@ -123,11 +164,9 @@
     }
 
     .form-and-entry{
-    
-    /* width: 100%; */
     margin-left: 0%;
-    background-color: yellow;
     width: 100%;
+    margin-top: 0%;
     }    
 
     .grey-block{
@@ -138,7 +177,7 @@
     border-radius: 5px;
     padding-left: 20px;
     /* padding-right: 20px; */
-    outline: 1px solid black;
+    /* outline: 1px solid black; */
     /* padding-right: 20px; */
     }
     
@@ -150,7 +189,7 @@
     border-radius: 5px;
     padding-left: 20px;
     /* padding-right: 20px; */
-    outline: 1px solid black;
+    /* outline: 1px solid black; */
     }
     
     .yellow-block{
@@ -161,6 +200,6 @@
     border-radius: 5px;
     padding-left: 20px;
     /* padding-right: 20px; */
-    outline: 1px solid black;
+    /* outline: 1px solid black; */
     }
   }

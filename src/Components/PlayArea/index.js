@@ -60,13 +60,13 @@ class PlayArea extends React.Component {
     handleGuessSubmit = event => {
         event.preventDefault();
         // Check for duplicate entries
-        if (!this.state.guesses.includes(this.state.entry)) {
+        if (!this.state.guesses.includes(this.state.entry.toLowerCase())) {
             // Check for real words
-            if (WORDS.includes(this.state.entry)) {
+            if (WORDS.includes(this.state.entry.toLowerCase())) {
                 //   Guess 1
                 if (this.state.count === 1) {
-                    this.state.guess1 = this.state.entry;
-                    this.state.guesses.push(this.state.entry);
+                    this.state.guess1 = this.state.entry.toLowerCase();
+                    this.state.guesses.push(this.state.entry.toLowerCase());
                     console.log("guess 1:", this.state.guess1);
                     // Split the letters to fill letters array
                     this.state.guess1Letters = this.state.guess1.split("");
@@ -75,8 +75,8 @@ class PlayArea extends React.Component {
                 }
                 //   Guess 2
                 if ((this.state.count === 2)) {
-                    this.state.guess2 = this.state.entry;
-                    this.state.guesses.push(this.state.entry);
+                    this.state.guess2 = this.state.entry.toLowerCase();
+                    this.state.guesses.push(this.state.entry.toLowerCase());
                     console.log("guess 2:", this.state.guess2);
                     // Split the letters to fill letters array
                     this.state.guess2Letters = this.state.guess2.split("");
@@ -85,8 +85,8 @@ class PlayArea extends React.Component {
                 }
                 //   Guess 3  
                 if (this.state.count === 3) {
-                    this.state.guess3 = this.state.entry;
-                    this.state.guesses.push(this.state.entry);
+                    this.state.guess3 = this.state.entry.toLowerCase();
+                    this.state.guesses.push(this.state.entry.toLowerCase());
                     console.log("guess 3:", this.state.guess3);
                     // Split the letters to fill letters array
                     this.state.guess3Letters = this.state.guess3.split("");
@@ -95,8 +95,8 @@ class PlayArea extends React.Component {
                 }
                 //   Guess 4
                 if (this.state.count === 4) {
-                    this.state.guess4 = this.state.entry;
-                    this.state.guesses.push(this.state.entry);
+                    this.state.guess4 = this.state.entry.toLowerCase();
+                    this.state.guesses.push(this.state.entry.toLowerCase());
                     console.log("guess 4:", this.state.guess4);
                     // Split the letters to fill letters array
                     this.state.guess4Letters = this.state.guess4.split("");
@@ -105,8 +105,8 @@ class PlayArea extends React.Component {
                 }
                 //   Guess 5  
                 if (this.state.count === 5) {
-                    this.state.guess5 = this.state.entry;
-                    this.state.guesses.push(this.state.entry);
+                    this.state.guess5 = this.state.entry.toLowerCase();
+                    this.state.guesses.push(this.state.entry.toLowerCase());
                     console.log("guess 5:", this.state.guess5);
                     // Split the letters to fill letters array
                     this.state.guess5Letters = this.state.guess5.split("");
@@ -115,8 +115,8 @@ class PlayArea extends React.Component {
                 }
                 //   Guess 6  
                 if (this.state.count === 6) {
-                    this.state.guess6 = this.state.entry;
-                    this.state.guesses.push(this.state.entry);
+                    this.state.guess6 = this.state.entry.toLowerCase();
+                    this.state.guesses.push(this.state.entry.toLowerCase());
                     console.log("guess 6:", this.state.guess6);
                     // Split the letters to fill letters array
                     this.state.guess6Letters = this.state.guess6.split("");

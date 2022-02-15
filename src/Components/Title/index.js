@@ -7,7 +7,7 @@ function Header() {
         <div id="headerText">
             <Container>
                 <Row>
-                    <Col sm><h1 className="header">Yopkodle</h1></Col>
+                    <Col sm><h1 className="header">Hello RVshare :)</h1></Col>
                 </Row>
             </Container>
         </div>

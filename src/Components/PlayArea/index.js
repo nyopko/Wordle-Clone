@@ -563,7 +563,7 @@ class PlayArea extends React.Component {
                                                 onChange={this.onChange}
                                             />
                                         </label>
-                                        <input className='input' type="submit" value="Submit" />
+                                        <input className='input' type="submit" value="Enter Guess" />
                                     </form>
                                 </div>
                             </div>

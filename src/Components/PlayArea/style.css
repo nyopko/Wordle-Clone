@@ -112,12 +112,12 @@ html{
 
     .input{
         color: black;
-        font-size: 20pt;
+        font-size: 10pt;
         height: 50px;
         width: 150px;
         margin-top: 10px;
         margin-bottom: 10px;
-        text-align: center;
+        text-align: center!important;
     }
     
     .text-form-input{

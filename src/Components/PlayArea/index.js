@@ -53,7 +53,7 @@ class PlayArea extends React.Component {
         // Add the word to the state
         this.state.answer = WORDS[Math.floor(Math.random() * WORDS.length)].toLowerCase();
 
-        console.log("this is the word used", this.state.answer);
+        console.log("Here ya go you cheater here's the word... ", this.state.answer);
     }
 
 
@@ -129,9 +129,11 @@ class PlayArea extends React.Component {
                     window.location.reload();
                 }
 
-                console.log(this.state.guesses);
+                // console.log("here guesses",this.state.guesses);
 
-                console.log(this.state.lettersUsed);
+                // console.log("letters used",this.state.lettersUsed);
+
+                // Add one to the count to move the game on
                 this.state.count++;
 
                 // Fill graveyard
@@ -173,8 +175,8 @@ class PlayArea extends React.Component {
 
     gameLogic(guessNum) {
         let scoreArr = [];
-        let entryArr = this.state.entry.split("");
-        let answerArr = this.state.answer.split("");
+        let entryArr = this.state.entry.toLowerCase().split("");
+        let answerArr = this.state.answer.toLowerCase().split("");
 
         for (let i = 0; i < 5; i++) {
             let letter = entryArr[i];
@@ -188,7 +190,7 @@ class PlayArea extends React.Component {
                 scoreArr.push(0);
             }
         }
-        console.log("score arr", scoreArr, "score total:", scoreArr.reduce((a, b) => a + b, 0));
+        // console.log("score arr", scoreArr, "score total:", scoreArr.reduce((a, b) => a + b, 0));
 
         // Win condition check if the score = 10
         if (scoreArr.reduce((a, b) => a + b, 0) === 10) {
@@ -219,7 +221,7 @@ class PlayArea extends React.Component {
 
         if (guessNum === 1) {
             this.state.scoreLogGuess1 = scoreArr;
-            console.log("1", this.state.scoreLogGuess1);
+            // console.log("1", this.state.scoreLogGuess1);
         }
         if (guessNum === 2) {
             this.state.scoreLogGuess2 = scoreArr;
@@ -234,7 +236,7 @@ class PlayArea extends React.Component {
                     number = "grey";
                 }
             }
-            console.log("2", this.state.scoreLogGuess2);
+            // console.log("2", this.state.scoreLogGuess2);
         }
         if (guessNum === 3) {
             this.state.scoreLogGuess3 = scoreArr;
@@ -249,7 +251,7 @@ class PlayArea extends React.Component {
                     number = "grey";
                 }
             }
-            console.log("3", this.state.scoreLogGuess3);
+            // console.log("3", this.state.scoreLogGuess3);
         }
         if (guessNum === 4) {
             this.state.scoreLogGuess4 = scoreArr;
@@ -264,7 +266,7 @@ class PlayArea extends React.Component {
                     number = "grey";
                 }
             }
-            console.log("4", this.state.scoreLogGuess4);
+            // console.log("4", this.state.scoreLogGuess4);
         }
         if (guessNum === 5) {
             this.state.scoreLogGuess5 = scoreArr;
@@ -279,7 +281,7 @@ class PlayArea extends React.Component {
                     number = "grey";
                 }
             }
-            console.log("5", this.state.scoreLogGuess5);
+            // console.log("5", this.state.scoreLogGuess5);
         }
         if (guessNum === 6) {
             this.state.scoreLogGuess6 = scoreArr;
@@ -294,7 +296,7 @@ class PlayArea extends React.Component {
                     number = "grey";
                 }
             }
-            console.log("6", this.state.scoreLogGuess6);
+            // console.log("6", this.state.scoreLogGuess6);
         }
     }
 
@@ -559,7 +561,7 @@ class PlayArea extends React.Component {
                                                 maxLength="5"
                                                 minLength="5"
                                                 placeholder="Enter a five letter word here."
-                                                value={this.state.entry}
+                                                value={this.state.entry.toLowerCase()}
                                                 onChange={this.onChange}
                                             />
                                         </label>

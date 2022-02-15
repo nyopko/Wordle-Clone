@@ -567,21 +567,22 @@ class PlayArea extends React.Component {
                                 </div>
                             </div>
                         </Col>
-                        <div className='letter-graveyard'>
+                        {/* <div className='letter-graveyard'>
                             <Col>
                                 <h5>Letters Used</h5>
-                                <h5>{this.state.lettersUsed.sort().join(", ")}</h5>
+                                <h5 className='letters-used-bank'>{this.state.lettersUsed.sort().join(", ")}</h5>
                             </Col>
-                        </div>
+                        </div> */}
                     </Row>
-                    <div className='mobile-letter-graveyard'>
+                    <div className='letter-graveyard'>
                         <Row>
                             <Col>
                                 <h4>Letters Used</h4>
-                                <h5>{this.state.lettersUsed.sort().join(", ")}</h5>
+                                <h5 className='letters-used-bank'>{this.state.lettersUsed.sort().join(", ")}</h5>
                             </Col>
                         </Row>
                     </div>
+                    
                 </Container>
             </div>
         );

@@ -1,5 +1,3 @@
-# Getting Started with Create React App
-
 This is a very basic Wordle clone made in React in just a few days. 
 
 # Future Improvements

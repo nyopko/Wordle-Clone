@@ -1,6 +1,7 @@
 .header{
-    color: red;
+    color: white;
     font-size: 2em;
     margin-top: 10px;
     text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
 }

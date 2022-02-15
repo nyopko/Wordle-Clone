@@ -1,5 +1,6 @@
 html{
     background-color: #3a3a3c;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
 }
 .play-area{
     margin-top: -20px;   
@@ -16,9 +17,10 @@ html{
 }
 
 .user-text{
-    color: red;
+    color: white;
     text-transform: uppercase;
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
     
 }
 
@@ -37,6 +39,7 @@ html{
     width: 300px;
     margin-top: 20px;
     margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .text-form-input{
@@ -60,6 +63,7 @@ html{
 .letter-graveyard{
     color: white;
     margin-top: 5%;
+    font-family: 'Montserrat', sans-serif;
     /* width: 20%; */
     /* background-color: red; */
 }
@@ -68,21 +72,21 @@ html{
     background-color: grey;
     margin-top: 10px;
     width: 55px;
-    height: 35px;
+    height: 40px;
 }
 
 .green-block{
     background: green;
     margin-top: 10px;
     width: 55px;
-    height: 35px;
+    height: 40px;
 }
 
 .yellow-block{
    background-color: yellow;
     margin-top: 10px;
     width: 55px;
-    height: 35px;
+    height: 40px;
 }
 
 .grid-col{
@@ -129,7 +133,7 @@ html{
     }
 
     .letter-graveyard{
-        margin-top: 0%;
+        margin-top: -5%;
         margin-bottom: 10%;
     }
 
